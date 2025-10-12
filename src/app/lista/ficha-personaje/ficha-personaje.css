@@ -1,7 +1,12 @@
 .personaje {
     border: 2px solid black;
     border-radius: 10%;
-    padding: 10px;
+    padding: 2%;
+    transition: transform 0.3s ease;
+}
+
+.personaje:hover {
+    transform: translateY(-10px);
 }
 
 .imagen {
