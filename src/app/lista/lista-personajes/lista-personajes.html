@@ -1,3 +1,5 @@
-@for(personaje of personajes; track personaje) {
-    <app-ficha-personaje [per]="personaje"></app-ficha-personaje>
-}
+<div class="grid">
+    @for(personaje of personajes; track personaje) {
+        <app-ficha-personaje [per]="personaje"></app-ficha-personaje>
+    }
+</div>

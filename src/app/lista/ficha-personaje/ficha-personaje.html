@@ -1,3 +1,6 @@
-<div class="personaje">
-    {{ per }}
+<div class="personaje" [style.backgroundColor]="getFondo()">
+    <img [src]="per.imagen" alt="{{ per.nombre }}" class="imagen">
+    <h2>{{ per.nombre }}</h2>
+    <p><strong>Raza:</strong> {{ per.raza }}</p>
+    <p><strong>Poder:</strong> <span *ngFor="let estrella of getEstrellas()">{{ estrella }}</span></p>
 </div>
