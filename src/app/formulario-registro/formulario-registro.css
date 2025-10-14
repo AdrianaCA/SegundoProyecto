@@ -1,0 +1,8 @@
+.contenedor-campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.mensaje-error {
+    color: red;
+}
