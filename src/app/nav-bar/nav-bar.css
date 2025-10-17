@@ -9,3 +9,15 @@
 .opcion:hover {
   font-weight: 700;
 }
+
+.nav-halloween {
+  background-color: purple;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .opcion2 {
+    display: none;
+  }
+}
+
