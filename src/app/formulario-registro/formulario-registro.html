@@ -5,16 +5,16 @@
 
     @if(formulario.controls['nombre'].touched) {
         <small class="mensaje-error">
-        @if(formulario.controls['nombre'].hasError('required')) {
-            El campo nombre es obliatorio
-        }
-        @if(formulario.controls['nombre'].hasError('minlength')) {
-            Mínimo 3 letras
-        }
-        @if(formulario.controls['nombre'].hasError('maxlength')) {
-            Máximo 3 letras
-        }
-    </small>
+            @if(formulario.controls['nombre'].hasError('required')) {
+                El campo nombre es obliatorio
+            }
+            @if(formulario.controls['nombre'].hasError('minlength')) {
+                Mínimo 3 letras
+            }
+            @if(formulario.controls['nombre'].hasError('maxlength')) {
+                Máximo 3 letras
+            }
+        </small>
     }
   </div>
 
@@ -24,13 +24,13 @@
 
     @if(formulario.controls['email'].touched) {
         <small class="mensaje-error">
-        @if(formulario.controls['email'].hasError('required')) {
-            El campo email es obliatorio
-        }
-        @if(formulario.controls['email'].hasError('email')) {
-            No cumple con el formato de un email
-        }
-    </small>
+            @if(formulario.controls['email'].hasError('required')) {
+                El campo email es obliatorio
+            }
+            @if(formulario.controls['email'].hasError('email')) {
+                No cumple con el formato de un email
+            }
+        </small>
     }
   </div>
 
@@ -40,16 +40,16 @@
 
     @if(formulario.controls['edad'].touched) {
         <small class="mensaje-error">
-        @if(formulario.controls['edad'].hasError('required')) {
-            El campo edad es obliatorio
-        }
-        @if(formulario.controls['edad'].hasError('min')) {
-            La edad no es válida
-        }
-    </small>
+            @if(formulario.controls['edad'].hasError('required')) {
+                El campo edad es obliatorio
+            }
+            @if(formulario.controls['edad'].hasError('min')) {
+                La edad no es válida
+            }
+        </small>
     }
   </div>
 
   <button type="submit">Enviar</button>
-  <button type="button" (click)="resetear()">Reseter</button>
+  <button type="button" (click)="resetear()">Resetear</button>
 </form>

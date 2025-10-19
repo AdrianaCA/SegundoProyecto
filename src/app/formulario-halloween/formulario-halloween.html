@@ -1,1 +1,95 @@
-<p>formulario-halloween works!</p>
+<div class="fondo">
+    <div class="campos">
+        <form [formGroup]="formulario">
+            <div class="campo">
+                <label for="nombre">Nombre:</label>
+                <input id="nombre" formControlName="nombre">
+
+                @if(formulario.controls['nombre'].touched) {
+                    <small class="mensaje-error">
+                        @if(formulario.controls['nombre'].hasError('required')) {
+                            👻 Este campo da más miedo vacío, ¡rellénalo!
+                        }
+                        @if(formulario.controls['nombre'].hasError('minlength')) {
+                            Mínimo 3 letras
+                        }
+                    </small>
+                }
+            </div>
+
+            <div class="campo">
+                <label for="email">Email:</label>
+                <input id="email" formControlName="email">
+
+                @if(formulario.controls['email'].touched) {
+                    <small class="mensaje-error">
+                        @if(formulario.controls['email'].hasError('required')) {
+                            👻 Este campo da más miedo vacío, ¡rellénalo!
+                        }
+                        @if(formulario.controls['email'].hasError('email')) {
+                            🩸 Ese correo parece maldito… revisa el formato.
+                        }
+                    </small>
+                }
+            </div>
+
+            <div class="campo">
+                <mat-form-field>
+                    <mat-label>Tipo de invitado</mat-label>
+                    <mat-select name="tipoInvitado">
+                        @for (invitado of tipoInvitados; track invitado) {
+                            <mat-option [value]="invitado">{{invitado}}</mat-option>
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="campo">
+                <label for="disfraz">Disfraz:</label>
+                <input id="disfraz" formControlName="disfraz">
+
+                @if(formulario.controls['disfraz'].touched) {
+                    <small class="mensaje-error">
+                        @if(formulario.controls['disfraz'].hasError('required')) {
+                            👻 Este campo da más miedo vacío, ¡rellénalo!
+                        }
+                    </small>
+                }
+            </div>
+
+            <!--
+            <div class="campo">
+                <mat-form-field>
+                    <mat-label>Fecha de llegada:</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="fechaLlegada" placeholder="dd/mm/aaa">
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                @if(formulario.controls['fechaLlegada'].touched) {
+                    <small class="mensaje-error">
+                        @if(formulario.controls['fechaLlegada'].hasError('required')) {
+                            👻 Este campo da más miedo vacío, ¡rellénalo!
+                        }
+                    </small>
+                }
+            </div>
+            -->
+
+            <div class="campo">
+                <mat-checkbox formControlName="aceptaReglas">Prometo no morder a los demás invitados</mat-checkbox>
+
+                @if(formulario.controls['aceptaReglas'].touched) {
+                    <small class="mensaje-error">
+                        @if(formulario.controls['aceptaReglas'].hasError('required')) {
+                            👻 Este campo da más miedo vacío, ¡rellénalo!
+                        }
+                    </small>
+                }
+            </div>
+
+            <button type="submit" (click)="submit()">Enviar</button>
+            
+            <p class="mensaje" *ngIf="enviado"><strong>{{ mensajeExito }}</strong></p>
+        </form>
+    </div>
+</div>
