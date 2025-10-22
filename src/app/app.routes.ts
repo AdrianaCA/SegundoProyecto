@@ -7,6 +7,7 @@ import { EyeCandy } from './eye-candy/eye-candy';
 import { ListaPersonajes } from './lista/lista-personajes/lista-personajes';
 import { FormularioRegistro } from './formulario-registro/formulario-registro';
 import { FormularioHalloween } from './formulario-halloween/formulario-halloween';
+import { KanbanBoard } from './kanban/kanban-board/kanban-board';
 
 export const routes: Routes = [
     { path: 'contador', component: Contador },
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'eye-candy', component: EyeCandy },
     { path: 'lista/lista-personajes', component: ListaPersonajes },
     { path: 'formulario-registro', component: FormularioRegistro },
-    { path: 'formulario-halloween', component: FormularioHalloween }
+    { path: 'formulario-halloween', component: FormularioHalloween },
+    { path: 'kanban/kanban-board', component: KanbanBoard }
 ];

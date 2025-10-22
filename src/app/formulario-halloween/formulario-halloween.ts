@@ -3,12 +3,15 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatInputModule} from '@angular/material/input';
+import {provideNativeDateAdapter} from '@angular/material/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-formulario-halloween',
-  imports: [CommonModule , ReactiveFormsModule, MatSelectModule, MatDatepickerModule, MatCheckboxModule],
+  imports: [CommonModule , ReactiveFormsModule, MatSelectModule, MatDatepickerModule, MatCheckboxModule, MatInputModule],
   templateUrl: './formulario-halloween.html',
+  providers: [provideNativeDateAdapter()],
   styleUrl: './formulario-halloween.css'
 })
 export class FormularioHalloween {

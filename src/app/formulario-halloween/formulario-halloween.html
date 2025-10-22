@@ -17,6 +17,8 @@
                 }
             </div>
 
+            <br>
+
             <div class="campo">
                 <label for="email">Email:</label>
                 <input id="email" formControlName="email">
@@ -32,6 +34,8 @@
                     </small>
                 }
             </div>
+
+            <br>
 
             <div class="campo">
                 <mat-form-field>
@@ -57,11 +61,13 @@
                 }
             </div>
 
-            <!--
+            <br>
+            
             <div class="campo">
                 <mat-form-field>
                     <mat-label>Fecha de llegada:</mat-label>
                     <input matInput [matDatepicker]="picker" formControlName="fechaLlegada" placeholder="dd/mm/aaa">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
 
@@ -73,7 +79,6 @@
                     </small>
                 }
             </div>
-            -->
 
             <div class="campo">
                 <mat-checkbox formControlName="aceptaReglas">Prometo no morder a los demás invitados</mat-checkbox>
@@ -86,6 +91,8 @@
                     </small>
                 }
             </div>
+
+            <br>
 
             <button type="submit" (click)="submit()">Enviar</button>
             
