@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Tarea } from '../../models/Tarea.model';
 
 @Component({
   selector: 'app-kanban-card',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './kanban-card.css'
 })
 export class KanbanCard {
+
+  @Input() t!: Tarea;
 
 }

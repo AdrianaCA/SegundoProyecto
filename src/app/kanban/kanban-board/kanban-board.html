@@ -1,1 +1,51 @@
-<p cdkDrag>kanban-board works!</p>
+<div class="contenedor-general">
+    <div class="example-container">
+        <h2>To do: {{ todo.length }}</h2>
+
+        <div
+            cdkDropList
+            #todoList="cdkDropList"
+            [cdkDropListData]="todo"
+            [cdkDropListConnectedTo]="[doingList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            @for (tarea of todo; track tarea) {
+                <app-kanban-card [t]="tarea"></app-kanban-card>
+            }
+        </div>
+
+        <button type="button" (click)="anadirTarea()">Añadir tarea</button>
+    </div>
+
+    <div class="example-container">
+        <h2>Doing: {{ doing.length }}</h2>
+
+        <div
+            cdkDropList
+            #doingList="cdkDropList"
+            [cdkDropListData]="doing"
+            [cdkDropListConnectedTo]="[todoList, doneList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            @for (tarea of doing; track tarea) {
+                <app-kanban-card [t]="tarea"></app-kanban-card>
+            }
+        </div>
+    </div>
+
+    <div class="example-container">
+        <h2>Done: {{ done.length }}</h2>
+
+        <div
+            cdkDropList
+            #doneList="cdkDropList"
+            [cdkDropListData]="done"
+            [cdkDropListConnectedTo]="[doingList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            @for (tarea of done; track tarea) {
+                <app-kanban-card [t]="tarea"></app-kanban-card>
+            }
+        </div>
+    </div>
+</div>
