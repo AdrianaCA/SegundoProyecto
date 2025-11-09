@@ -1,4 +1,4 @@
-<div class="contenedor">
+<div class="contenedor" [style.backgroundColor]="evento.getFondo()">
 
     <div class="semaforo">
         <div *ngIf="numero > 1; else gris" class="luz roja"></div>

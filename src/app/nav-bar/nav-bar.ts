@@ -6,6 +6,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
+import { Evento } from '../services/evento';
 
 @Component({
   selector: 'app-nav-bar',
@@ -18,5 +19,15 @@ export class NavBar {
   pi:string = "pi pi pi";
 
   esHalloween:boolean = false;
+
+  constructor(private evento:Evento) {
+
+  }
+
+  cambiar() {
+    if(this.esHalloween) {
+      this.evento.cambiarEvento("halloween");
+    }
+  }
 
 }
