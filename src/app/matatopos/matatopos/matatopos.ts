@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Consola } from '../../services/consola';
 
 @Component({
   selector: 'app-matatopos',
@@ -13,8 +14,13 @@ export class Matatopos {
 
   numero:number = 0;
 
+  constructor(private consola:Consola) {
+
+  }
+
   mataTopo(index:number) {
     console.log(index);
+    this.consola.mostrarEnConsola("Has matado un topo");
 
     if(this.topos[index] == 1) {
       this.topos[index] = 0;
