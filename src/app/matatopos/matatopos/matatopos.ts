@@ -10,7 +10,7 @@ import { Consola } from '../../services/consola';
 })
 export class Matatopos {
 
-  topos:number[] = [1,0,0,0,0,0,0,0,0];
+  topos:number[] = [0,0,0,0,1,0,0,0,0];
 
   numero:number = 0;
 
@@ -18,7 +18,7 @@ export class Matatopos {
 
   }
 
-  mataTopo(index:number) {
+  matarTopo(index:number) {
     console.log(index);
     this.consola.mostrarEnConsola("Has matado un topo");
 
